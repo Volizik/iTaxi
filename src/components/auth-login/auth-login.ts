@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
-import {App, IonicPage, NavController, NavParams} from 'ionic-angular';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Component } from '@angular/core';
 import {AuthProvider} from "../../providers/auth/auth";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {NavController, NavParams} from "ionic-angular";
 import {SharedProvider} from "../../providers/shared/shared";
 
-@IonicPage()
+
 @Component({
-    selector: 'page-auth-login',
-    templateUrl: 'auth-login.html',
+  selector: 'auth-login',
+  templateUrl: 'auth-login.html'
 })
-export class AuthLoginPage {
+export class AuthLoginComponent {
 
     loginForm = new FormGroup({
         'username': new FormControl('', Validators.required),
@@ -19,10 +19,7 @@ export class AuthLoginPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 private authProvider: AuthProvider,
-                private app: App,
                 private sharedProvider: SharedProvider) {}
-
-    ionViewDidLoad() {}
 
     login() {
         const preloader = this.sharedProvider.preloader();
@@ -34,10 +31,9 @@ export class AuthLoginPage {
                 return false;
             } else {
                 this.authProvider.setToken(data['token']);
-                this.app.getRootNav().setRoot('TabsPage');
-                window.location.href = '/#/tabs/главная/p2';
-                this.navCtrl.push('TabsPage');
+                this.navCtrl.setRoot('AppMenuPage');
                 preloader.dismiss();
+
             }
         });
     }

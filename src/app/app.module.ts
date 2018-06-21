@@ -7,28 +7,29 @@ import {MyApp} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AuthProvider } from '../providers/auth/auth';
 import { SharedProvider } from '../providers/shared/shared';
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
     declarations: [
-        MyApp,
+        MyApp
     ],
     imports: [
         BrowserModule,
+        CommonModule,
         HttpClientModule,
         IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-        MyApp,
+        MyApp
     ],
     providers: [
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         AuthProvider,
-    SharedProvider
+        SharedProvider
     ]
 })
-export class AppModule {
-}
+export class AppModule {}

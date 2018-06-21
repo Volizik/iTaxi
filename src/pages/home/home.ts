@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {AuthProvider} from "../../providers/auth/auth";
 
 @IonicPage()
 @Component({
@@ -15,10 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private authProvider: AuthProvider) {}
 
   ionViewDidLoad() {
-    this.navCtrl.setRoot('AuthTabsPage');
+    if (this.authProvider.getToken()) {
+        this.navCtrl.setRoot('AppMenuPage');
+    } else {
+        this.navCtrl.setRoot('AuthTabsPage');
+    }
   }
 
 }

@@ -1,4 +1,8 @@
-<ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Вход" tabIcon="finger-print"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Регистрация" tabIcon="key"></ion-tab>
-</ion-tabs>
+<tabs>
+    <tab tabTitle="Войти">
+        <auth-login></auth-login>
+    </tab>
+    <tab tabTitle="Зарегистрироваться">
+        <auth-registration></auth-registration>
+    </tab>
+</tabs>

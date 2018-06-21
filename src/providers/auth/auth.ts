@@ -1,14 +1,16 @@
 import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {AlertController} from "ionic-angular";
+import {Injectable, ViewChild} from '@angular/core';
+import {AlertController, Nav} from "ionic-angular";
 
 
 @Injectable()
 export class AuthProvider {
 
     url = 'https://taxi.art-craft.xyz/api/user';
+    @ViewChild(Nav) nav;
 
-    constructor(public http: HttpClient, public alertCtrl: AlertController) {}
+    constructor(public http: HttpClient,
+                public alertCtrl: AlertController) {}
 
     login(data) {
         let formData = new FormData();
@@ -48,5 +50,9 @@ export class AuthProvider {
     }
     getToken() {
        return localStorage.getItem('iTaxiToken');
+    }
+
+    clearToken() {
+        localStorage.removeItem('iTaxiToken');
     }
 }

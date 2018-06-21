@@ -1,0 +1,32 @@
+<ion-menu [content]="content">
+  <ion-header>
+
+    <ion-navbar>
+      <ion-title>Меню</ion-title>
+    </ion-navbar>
+
+  </ion-header>
+
+  <ion-content>
+    <ion-list >
+      <ion-item>
+        <ion-icon name="leaf" item-start></ion-icon>
+        Herbology
+        <ion-icon name="rose" item-end></ion-icon>
+      </ion-item>
+      <button ion-item clear full (click)="openUserProfilePage()">
+        <ion-icon name="leaf" item-start></ion-icon>
+        Профиль
+      </button>
+      <ion-item>
+        <ion-label>Sam</ion-label>
+        <ion-toggle checked="false" color="danger"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <button ion-button color="danger" clear full (click)="logout()">Выход</button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

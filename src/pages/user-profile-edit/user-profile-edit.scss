@@ -1,0 +1,17 @@
+page-user-profile-edit {
+  .input-photo {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    height: 10vh;
+    cursor: pointer;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+    input {
+      display: none;
+    }
+  }
+}

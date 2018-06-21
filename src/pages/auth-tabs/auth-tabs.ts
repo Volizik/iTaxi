@@ -9,8 +9,8 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class AuthTabsPage {
 
-    tab1Root = 'AuthLoginPage';
-    tab2Root = 'AuthRegistrationPage';
+    tab1Auth = 'AuthLoginPage';
+    tab2Auth = 'AuthRegistrationPage';
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
