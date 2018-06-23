@@ -6,6 +6,8 @@ import {AlertController, LoadingController} from "ionic-angular";
 @Injectable()
 export class SharedProvider {
 
+    url = 'https://taxi.art-craft.xyz/api/user';
+
     constructor(public http: HttpClient,
                 public loadingCtrl: LoadingController,
                 private alertCtrl: AlertController) {}
@@ -22,6 +24,26 @@ export class SharedProvider {
             buttons: ['OK']
         });
         alert.present();
+    }
+
+    setPhoto(photo) {
+        const data = {
+            token: this.getToken(),
+            avatar: photo
+        };
+        return this.http.post(`${this.url}/avatar`, data);
+    }
+
+    setToken(token) {
+        localStorage.setItem('iTaxiToken', token);
+    }
+
+    getToken() {
+        return localStorage.getItem('iTaxiToken');
+    }
+
+    clearToken() {
+        localStorage.removeItem('iTaxiToken');
     }
 
 }

@@ -9,15 +9,15 @@
 
 <ion-content padding>
   <ion-card>
-    <img src="./assets/imgs/nofoto.png"/>
+    <img src="{{ user.photo }}" class="photo"/>
     <ion-card-content>
       <ion-card-title>
-        Nine Inch Nails Live
+        <h3>Имя: {{ user.name }}</h3>
       </ion-card-title>
-      <p>
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
-      </p>
+      <p>Возраст: {{ user.age }}</p>
+      <p>Пол: {{ user.gender }}</p>
+      <p>Тел.: {{ user.phone }}</p>
+      <p>Машина: {{ user.car }}</p>
       <button ion-button full (click)="editProfile()">Редактировать</button>
     </ion-card-content>
 

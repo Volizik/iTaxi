@@ -15,6 +15,15 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class UserProfilePage {
 
+    user = {
+        name: 'Вася',
+        age: '120',
+        gender: 'мужской',
+        phone: '+38(066) 123 45 56',
+        car: 'Mercedes Vito',
+        photo: './assets/imgs/nofoto.png'
+    };
+
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
 

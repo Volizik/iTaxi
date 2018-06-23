@@ -15,7 +15,7 @@
         <ion-item>
           <label class="input-photo">
             <img src="./assets/imgs/nofoto.png" alt="no photo">
-            <input type="file">
+            <input type="file" (change)="setPhoto($event)">
           </label>
         </ion-item>
 
@@ -25,12 +25,22 @@
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Машина</ion-label>
+          <ion-label stacked>Возраст</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Пол</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label stacked>Номер телефона</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Машина</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
 
