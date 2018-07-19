@@ -28,4 +28,8 @@ export class AppMenuPage {
         this.navCtrl.push('UserProfilePage')
     }
 
+    openUserTransportPage() {
+        this.navCtrl.push('TransportPage')
+    }
+
 }

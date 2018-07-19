@@ -25,6 +25,7 @@ export class AuthLoginComponent {
         const preloader = this.sharedProvider.preloader();
         preloader.present();
         this.authProvider.login(this.loginForm.value).subscribe(data => {
+            console.log(data);
             if (data['status'] !== 1) {
                 preloader.dismiss();
                 this.authProvider.showError('К сожалению такого пользователя не существует!');

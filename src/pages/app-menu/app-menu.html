@@ -9,22 +9,9 @@
 
   <ion-content>
     <ion-list >
-      <ion-item>
-        <ion-icon name="leaf" item-start></ion-icon>
-        Herbology
-        <ion-icon name="rose" item-end></ion-icon>
-      </ion-item>
-      <button ion-item clear full (click)="openUserProfilePage()">
-        <ion-icon name="leaf" item-start></ion-icon>
-        Профиль
-      </button>
-      <ion-item>
-        <ion-label>Sam</ion-label>
-        <ion-toggle checked="false" color="danger"></ion-toggle>
-      </ion-item>
-      <ion-item>
-        <button ion-button color="danger" clear full (click)="logout()">Выход</button>
-      </ion-item>
+      <button ion-item clear full (click)="openUserProfilePage()">Профиль</button>
+      <button ion-item clear full (click)="openUserTransportPage()">Мой транспорт</button>
+      <button style="margin-top: auto;" ion-item color="danger" text-center clear full (click)="logout()">Выход</button>
     </ion-list>
   </ion-content>
 </ion-menu>

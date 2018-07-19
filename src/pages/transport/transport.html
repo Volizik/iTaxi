@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-navbar #navbar>
+        <ion-title>Мои машины</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <button ion-button color="secondary" round class="add-new-car" (click)="goToAddTransport()">+</button>
+
+    <ion-list>
+        <ion-item *ngFor="let car of carsArr">
+            <ion-thumbnail item-start>
+                <img src="{{ car.photo || './assets/imgs/nofoto.png' }}">
+            </ion-thumbnail>
+            <h2>{{car.brand}} {{car.model}}</h2>
+            <p>Год выпуска • {{car.year}}</p>
+            <button ion-button clear item-end>View</button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

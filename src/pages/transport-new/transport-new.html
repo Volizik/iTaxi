@@ -1,0 +1,38 @@
+<!--
+  Generated template for the TransportNewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Добавление автомобиля</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Марка машины</ion-label>
+      <ion-input type="text" [(ngModel)]="brand"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Модель</ion-label>
+      <ion-input type="text" [(ngModel)]="model"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Год выпуска</ion-label>
+      <ion-input type="text" [(ngModel)]="year"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button color="secondary" (click)="addTransport()">Добавить машину</button>
+
+</ion-content>

@@ -28,7 +28,7 @@ export class UserProfileEditPage {
         if (event.target.files && event.target.files[0]) {
             var reader = new FileReader();
             reader.onload = (ev) => {
-                this.sharedProvider.setPhoto(ev.target.result).subscribe((e) => {
+                this.sharedProvider.setPhoto(ev.target['result']).subscribe((e) => {
                     console.log(e)
                 });
             };

@@ -27,11 +27,10 @@ export class SharedProvider {
     }
 
     setPhoto(photo) {
-        const data = {
-            token: this.getToken(),
-            avatar: photo
-        };
-        return this.http.post(`${this.url}/avatar`, data);
+        let formData = new FormData();
+        formData.append('token', this.getToken());
+        formData.append('avatar', photo);
+        return this.http.post(`${this.url}/avatar`, formData);
     }
 
     setToken(token) {

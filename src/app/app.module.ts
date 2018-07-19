@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AuthProvider } from '../providers/auth/auth';
 import { SharedProvider } from '../providers/shared/shared';
 import {CommonModule} from "@angular/common";
+import { TransportProvider } from '../providers/transport/transport';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {CommonModule} from "@angular/common";
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         AuthProvider,
-        SharedProvider
+        SharedProvider,
+        TransportProvider
     ]
 })
 export class AppModule {}
