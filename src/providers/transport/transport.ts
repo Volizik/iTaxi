@@ -37,5 +37,12 @@ export class TransportProvider {
         return this.http.post(`${this.url}/get-lists`, formData);
     }
 
+    deleteCurrentTransport(carId) {
+        let formData = new FormData();
+        formData.append('token', this.sharedProvider.getToken());
+        formData.append('id', carId);
+        return this.http.post(`${this.url}/delete`, formData);
+    }
+
 }
 

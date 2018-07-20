@@ -18,7 +18,7 @@
             </ion-thumbnail>
             <h2>{{car.brand}} {{car.model}}</h2>
             <p>Год выпуска • {{car.year}}</p>
-            <button ion-button clear item-end>View</button>
+            <button ion-button clear item-end (click)="goToDetailCarPage(car)">Подробнее</button>
         </ion-item>
     </ion-list>
 

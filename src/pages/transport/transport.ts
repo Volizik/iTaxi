@@ -39,4 +39,8 @@ export class TransportPage {
         this.navCtrl.push('TransportNewPage');
     }
 
+    goToDetailCarPage(car) {
+        this.navCtrl.push('TransportDetailPage', {car: car});
+    }
+
 }
