@@ -43,4 +43,10 @@ export class TransportPage {
         this.navCtrl.push('TransportDetailPage', {car: car});
     }
 
+    // deleteCar(carId) {
+    //     this.transportProvider.deleteCurrentTransport(carId).subscribe(res => {
+    //         console.log('car deleted');
+    //     });
+    // }
+
 }

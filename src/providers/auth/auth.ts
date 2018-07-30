@@ -44,4 +44,16 @@ export class AuthProvider {
         alert.present();
     }
 
+    setUserInfo(data) {
+        console.log(data)
+        localStorage.setItem('iTaxiUserInfo', JSON.stringify({token: data['token'], id: data['user_id']}));
+    }
+    getUserInfo() {
+        // console.log(localStorage.getItem('iTaxiUserInfo'))
+        return JSON.parse(localStorage.getItem('iTaxiUserInfo'));
+    }
+    clearUserInfo() {
+        localStorage.removeItem('iTaxiUserInfo');
+    }
+
 }

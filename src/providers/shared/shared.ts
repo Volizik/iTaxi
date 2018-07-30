@@ -1,6 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {AlertController, LoadingController} from "ionic-angular";
+import {AuthProvider} from "../auth/auth";
 
 
 @Injectable()
@@ -10,7 +11,8 @@ export class SharedProvider {
 
     constructor(public http: HttpClient,
                 public loadingCtrl: LoadingController,
-                private alertCtrl: AlertController) {}
+                private alertCtrl: AlertController,
+                private authProvider: AuthProvider) {}
 
     preloader() {
         return this.loadingCtrl.create({
@@ -28,21 +30,10 @@ export class SharedProvider {
 
     setPhoto(photo) {
         let formData = new FormData();
-        formData.append('token', this.getToken());
+        formData.append('token', this.authProvider.getUserInfo()['token']);
         formData.append('avatar', photo);
         return this.http.post(`${this.url}/avatar`, formData);
     }
 
-    setToken(token) {
-        localStorage.setItem('iTaxiToken', token);
-    }
-
-    getToken() {
-        return localStorage.getItem('iTaxiToken');
-    }
-
-    clearToken() {
-        localStorage.removeItem('iTaxiToken');
-    }
 
 }

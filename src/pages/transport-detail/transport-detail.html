@@ -14,5 +14,6 @@
 
 
 <ion-content padding>
+  <div>{{ car | json }}</div>
   <button ion-button color="secondary" round (click)="deleteTransport(car.id)">Удалить машину</button>
 </ion-content>

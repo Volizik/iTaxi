@@ -31,7 +31,7 @@ export class AuthLoginComponent {
                 this.authProvider.showError('К сожалению такого пользователя не существует!');
                 return false;
             } else {
-                this.sharedProvider.setToken(data['token']);
+                this.authProvider.setUserInfo(data);
                 this.navCtrl.setRoot('AppMenuPage');
                 preloader.dismiss();
 

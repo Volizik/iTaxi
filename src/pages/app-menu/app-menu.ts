@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {SharedProvider} from "../../providers/shared/shared";
+import {AuthProvider} from "../../providers/auth/auth";
 
 
 @IonicPage()
@@ -14,13 +14,12 @@ export class AppMenuPage {
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
-                private sharedProvider: SharedProvider) {
-    }
+                private authProvider: AuthProvider) {}
 
     ionViewDidLoad() {}
 
     logout() {
-        this.sharedProvider.clearToken();
+        this.authProvider.clearUserInfo();
         this.navCtrl.setRoot('AuthTabsPage');
     }
 
