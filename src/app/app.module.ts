@@ -9,6 +9,8 @@ import { AuthProvider } from '../providers/auth/auth';
 import { SharedProvider } from '../providers/shared/shared';
 import {CommonModule} from "@angular/common";
 import { TransportProvider } from '../providers/transport/transport';
+import { RequestsProvider } from '../providers/requests/requests';
+import { CityProvider } from '../providers/city/city';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { TransportProvider } from '../providers/transport/transport';
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         AuthProvider,
         SharedProvider,
-        TransportProvider
+        TransportProvider,
+        RequestsProvider,
+        CityProvider
     ]
 })
 export class AppModule {}

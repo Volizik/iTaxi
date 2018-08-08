@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {RequestsProvider} from "../../providers/requests/requests";
 
 /**
  * Generated class for the P1Page page.
@@ -15,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class P1Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public requestsProvider: RequestsProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad P1Page');
+    this.requestsProvider.getList(1).subscribe(res => {
+      this.data = JSON.stringify(res);
+    })
   }
 
 }

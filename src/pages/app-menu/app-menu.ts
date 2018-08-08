@@ -31,4 +31,8 @@ export class AppMenuPage {
         this.navCtrl.push('TransportPage')
     }
 
+    openUserRequestsPage() {
+        this.navCtrl.push('RequestsPage')
+    }
+
 }

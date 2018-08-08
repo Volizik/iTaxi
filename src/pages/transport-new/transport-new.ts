@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {TransportProvider} from "../../providers/transport/transport";
+import {SharedProvider} from "../../providers/shared/shared";
 
 /**
  * Generated class for the TransportNewPage page.
@@ -22,20 +23,21 @@ export class TransportNewPage {
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
-                private transportProvider: TransportProvider) {
+                private transportProvider: TransportProvider,
+                private sharedProvider: SharedProvider) {
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad TransportNewPage');
     }
 
-    addTransport() {
-        this.transportProvider
+    async addTransport() {
+        await this.transportProvider
             .addTransport({brand: this.brand, model: this.model, year: this.year})
             .subscribe(data => {
-                console.log(data)
+                this.sharedProvider.showAlert(data['value']);
+                this.navCtrl.push('TransportPage');
             });
-        this.navCtrl.push('TransportPage');
     }
 
 }

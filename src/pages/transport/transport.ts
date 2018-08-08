@@ -20,6 +20,7 @@ export class TransportPage {
     @ViewChild('navbar') navBar: Navbar;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private transportProvider: TransportProvider) {
+
     }
 
     ionViewDidEnter() {
@@ -43,10 +44,11 @@ export class TransportPage {
         this.navCtrl.push('TransportDetailPage', {car: car});
     }
 
-    // deleteCar(carId) {
-    //     this.transportProvider.deleteCurrentTransport(carId).subscribe(res => {
-    //         console.log('car deleted');
-    //     });
-    // }
+    deleteCar(carId) {
+        this.transportProvider.deleteCurrentTransport(carId).subscribe(res => {
+            console.log(res);
+            console.log('car deleted');
+        });
+    }
 
 }

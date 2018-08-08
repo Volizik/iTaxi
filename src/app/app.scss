@@ -14,3 +14,13 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.add-new-car {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 40px;
+  z-index: 1000;
+  height: 50px;
+  width: 50px;
+}

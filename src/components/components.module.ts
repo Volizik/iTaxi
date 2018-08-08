@@ -11,7 +11,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         AuthLoginComponent,
         AuthRegistrationComponent,
         Tabs,
-        Tab
+        Tab,
     ],
     imports: [
         CommonModule,
@@ -23,7 +23,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         AuthLoginComponent,
         AuthRegistrationComponent,
         Tabs,
-        Tab
+        Tab,
     ]
 })
 export class ComponentsModule {
